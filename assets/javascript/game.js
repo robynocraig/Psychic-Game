@@ -5,10 +5,8 @@ var availableLetters = ["a","b","c","d"];
 // Creating variables to hold the number of events
 var wins = 0;
 var losses = 0;
-// var guesses = 10;
 var guessesLeft = 10;
-var guessesSoFar = 0;
-
+var guessedLetters = [];
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
@@ -45,15 +43,15 @@ document.onkeyup = function(event) {
       alert("Sorry you are not psychic. Try again!");
       }
 
+  // Updating the guesses so far HTML with the letters pressed
+  var updateGuessesSoFar = function() {
+    document.querySelector('#guessesSoFar').innerHTML = "Your Guesses So Far: " + guessedLetters.join(', ');
+  };
+
+  // Storing the letter the user pressed
+  guessedLetters.push(userGuess);
+  updateGuessesSoFar();
+
 }
-// Can I set the values to default to something on load? i.e. 10, 0
-
-// If user guess is the same as a previous guess, do nothing.
-
-// Take the letters they have entered and add them to HTML (push?)
-
-// Reset Guesses Left back to 10 and clear letters guessed
-
-
 
 //,"e","f","g","h","i","j","k","l","m","n","o","q","r","s","t","u","v","w","x","y","z"
