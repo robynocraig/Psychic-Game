@@ -3,21 +3,46 @@
   <head>
     <head>
       <meta charset="UTF-8">
-      <title>Robyn's Psychic Game</title>
+      <title>Robyn's Hangman Game</title>
+      <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
   </head>
   <body>
   <div class="container">
 
-  <h1>The Psychic Game</h1>
-  <p>Guess what letter I'm thinking of</p>
-  <p id="wins">Wins: 0</p>
-  <p id="losses">Losses: 0</p>
-  <p id="guessesLeft">Guesses Left: 10</p>
-  <p id="guessesSoFar">Your Guesses So Far:</p>
+    <!-- Top Image -->
+    <img src="assets/images/spongebob.png" class="spongebob-image" alt="Spongebob Squarepants">
+    <img src="assets/images/psychic_header.jpg" class="header-image" alt="Psychic">
+
+    <!-- Hangman Game Left Column -->
+
+    <div class="game-board">
+
+      <section class="game-left">
+
+        <img src="assets/images/Seance_Shmeance.png" class="psychic-image" alt="Spongebob Psychic">
+
+      </section>
+
+      <!-- Hangman Game Right Column -->
+
+      <section class="game-right">
+
+        <p>GUESS WHAT LETTER I AM THINKING OF!</p>
+
+        <p>PRESS ANY KEY TO GET STARTED!</p>
+
+        <p id="wins">Wins: 0</p>
+        <p id="losses">Losses: 0</p>
+        <p id="guessesLeft">Guesses Left: 10</p>
+        <p id="guessesSoFar">Your Guesses So Far:</p>
+
+      </section>
+
+    </div>
 
   </div>
-
   <script src="assets/javascript/game.js"></script>
   </body>
 </html>

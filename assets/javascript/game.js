@@ -15,6 +15,15 @@ document.onkeyup = function(event) {
   var userGuess = event.key;
   console.log (userGuess);
 
+  // Updating the guesses so far HTML with the letters pressed
+  var updateGuessesSoFar = function() {
+    document.querySelector('#guessesSoFar').innerHTML = "Your Guesses So Far: " + guessedLetters.join(', ');
+  };
+
+  // Storing the letter the user pressed
+  guessedLetters.push(userGuess);
+  updateGuessesSoFar();
+
   // Randomly chooses a letter from the options array. This is the Computer's guess.
   var computerGuess = availableLetters[Math.floor(Math.random() * availableLetters.length)];
   console.log (computerGuess);
@@ -44,17 +53,9 @@ document.onkeyup = function(event) {
           guessesLeft = 10;
           guessedLetters = [];
           document.querySelector('#guessesLeft').innerHTML = "Guesses Left: " + guessesLeft;
+          document.querySelector('#guessesSoFar').innerHTML = "Your Guesses So Far:";
         }
       }
     }
-
-  // Updating the guesses so far HTML with the letters pressed
-  var updateGuessesSoFar = function() {
-    document.querySelector('#guessesSoFar').innerHTML = "Your Guesses So Far: " + guessedLetters.join(', ');
-  };
-
-  // Storing the letter the user pressed
-  guessedLetters.push(userGuess);
-  updateGuessesSoFar();
 
 }
