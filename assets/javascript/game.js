@@ -1,6 +1,6 @@
 // Available letters
 
-var availableLetters = ["abcdefghijklmnopqrstuvwxyz".split("")];
+var availableLetters = "abcdefghijklmnopqrstuvwxyz".split("");
 
 // Creating variables to hold the number of events
 var wins = 0;
@@ -29,23 +29,24 @@ document.onkeyup = function(event) {
         alert("Nice job! You are psychic!");
         guessesLeft = 10;
         guessedLetters = [];
+        document.querySelector('#guessesLeft').innerHTML = "Guesses Left: " + guessesLeft;
+        document.querySelector('#guessesSoFar').innerHTML = "Your Guesses So Far:";
       }
 
     // If user guess is the not the same as computer's letter.
-    if ((userGuess !== computerGuess)) {
+    if ((userGuess !== computerGuess)){
         guessesLeft--;
         document.querySelector('#guessesLeft').innerHTML = "Guesses Left: " + guessesLeft;
+        if (guessesLeft <=0) {
+          losses++;
+          document.querySelector('#losses').innerHTML = "Losses: " + losses;
+          alert("Sorry you are not psychic. Try again!");
+          guessesLeft = 10;
+          guessedLetters = [];
+          document.querySelector('#guessesLeft').innerHTML = "Guesses Left: " + guessesLeft;
+        }
       }
     }
-
-  // If there are no guesses left and the user has lost the game:
-  else if (guessesLeft === 0){
-      losses++;
-      document.querySelector('#losses').innerHTML = "Losses: " + losses;
-      alert("Sorry you are not psychic. Try again!");
-      guessesLeft = 10;
-      guessedLetters = [];
-      }
 
   // Updating the guesses so far HTML with the letters pressed
   var updateGuessesSoFar = function() {
